@@ -4,7 +4,12 @@
   "description": "SlackReactiontoGitHubKB",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "test:ai": "ts-node src/test-ai-summary.ts",
+    "start": "ts-node src/mcp-sdk-server.ts http",
+    "start:stdio": "ts-node src/mcp-sdk-server.ts stdio",
+    "dev": "ts-node-dev --respawn src/mcp-sdk-server.ts http",
+    "build": "tsc"
   },
   "repository": {
     "type": "git",
@@ -18,14 +23,24 @@
   },
   "homepage": "https://github.com/susumutomita/SlackReactiontoGitHubKB#readme",
   "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.1",
     "@types/node": "^22.15.9",
+    "@types/uuid": "^10.0.0",
     "dotenv": "^16.5.0",
     "ts-node": "^10.9.2",
+    "ts-node-dev": "^2.0.0",
     "typescript": "^5.8.3"
   },
   "dependencies": {
     "@aws-sdk/client-bedrock-runtime": "^3.803.0",
+    "@modelcontextprotocol/sdk": "^1.11.0",
     "axios": "^1.9.0",
-    "openai": "^4.97.0"
+    "body-parser": "^2.2.0",
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "openai": "^4.97.0",
+    "uuid": "^11.1.0",
+    "zod": "^3.24.4"
   }
 }
